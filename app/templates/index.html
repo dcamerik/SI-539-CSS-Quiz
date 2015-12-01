@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Quizzer</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <nav id="topnav" class="navbar navbar-default navbar-fixed-top ">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#rk-nav-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">CSS Quizzer</a>
+              </div>
+              <div class="collapse navbar-collapse" id="rk-nav-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li>
+                          <a class="active" href="#main-section">Quiz</a>
+                      </li>
+                      <li>
+                          <a href="vidoes.html">Videos</a>
+                      </li>
+                      <li>
+                          <a href="feedback.html">Feedback</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+    </header>
+
+    <section id="mainsection" class="main">
+      <h2> CSS Quiz </h2>
+
+      {% if mode == "question" %}
+      <hr>
+      <article id="multiple_choice_question_area">
+        <h3>Question: {{ question_number }}</h3>
+
+        <hr>
+        <p id="question">{{ question.question_text }}</p>
+
+        <form action="{{ check_answer_url }}" method=POST>
+
+        <hr>
+        {% for choice in question.choices %}
+            <div class="radio">
+              <label>
+                <input type="radio" name="choiceRadios" id="{{ choice.id }}" value="{{ choice.id }}">
+                {{ choice.text }}
+              </label>
+            </div>
+        {% endfor %}
+
+        <hr>
+        <button type="submit" class="btn btn-default">Submit</button>
+
+        </form>
+      </article>
+      {% endif %}
+
+      {% if mode == "answer" %}
+      <hr>
+      <article id="feedback">
+        <h3>Question: {{ question_number }}</h3>
+        {% if status == "correct" %}
+          <button type="button" class="btn btn-success">Correct</button>
+        {% else %}
+          <button type="button" class="btn btn-danger">Incorrect</button>
+        {% endif %}
+        <hr>
+        <p>{{ explanation }}</p>
+        <hr>
+        {% if all_done == "yes" %}
+            <h4>Quiz complete!</h4>
+        {% else %}
+            <form action="{{ next_question_url }}" method=GET>
+                <button type="submit" class="btn btn-default">Next</button>
+            </form>
+        {% endif %}
+      </article>
+      {% endif %}
+    </section>
+
+    <footer>
+        <div class='container-fluid'>
+            <div class='row'>
+               <span>Radhika Kolathumani, Dana Camerik &copy; 2015 </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/jquery-2.1.3.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>
