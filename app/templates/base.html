@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Quizzer</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <nav id="topnav" class="navbar navbar-default navbar-fixed-top ">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#rk-nav-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">CSS Quizzer</a>
+              </div>
+              <div class="collapse navbar-collapse" id="rk-nav-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li>
+                          <a class="active" href="/next/0#main-section">Quiz</a>
+                      </li>
+                      <li>
+                          <a href="/videos">Videos</a>
+                      </li>
+                      <li>
+                          <a href="/feedback">Feedback</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+    </header>
+
+    {% block content %}
+      Page content goes here
+    {% endblock %}
+
+    
+    <footer>
+        <div class='container-fluid'>
+            <div class='row'>
+               <span>Radhika Kolathumani, Dana Camerik &copy; 2015 </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/jquery-2.1.3.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>
