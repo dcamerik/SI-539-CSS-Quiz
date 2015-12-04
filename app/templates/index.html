@@ -3,7 +3,7 @@
 {% block content %}
     <section id="mainsection" class="main">
       <h2> CSS Quiz </h2>
-      
+
       {% set qnum = question_number + 1 %}
 
       {% if mode == "mc_question" %}
@@ -61,6 +61,7 @@
         <h3>Question: {{ qnum }}</h3>
         {% if status == "correct" %}
           <button type="button" class="btn btn-success">Correct</button>
+          {% set correct = correct + 1 %}
         {% else %}
           <button type="button" class="btn btn-danger">Incorrect</button>
         {% endif %}
@@ -69,6 +70,7 @@
         <hr>
         {% if all_done == "yes" %}
             <h4>Quiz complete!</h4>
+            <p>Your score is <b>{{ correct }}</b> out of <b>{{ qnum }}</b>!
         {% else %}
             <form action="{{ next_question_url }}" method=GET>
                 <button type="submit" class="btn btn-default">Next</button>
