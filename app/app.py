@@ -53,6 +53,8 @@ questions = [
     },
 ]
 
+correct = 0
+
 @app.route('/')
 def index():
     return redirect('/next/0')
@@ -67,14 +69,16 @@ def next(qno):
             mode = "mc_question",
             question_number = qno,
             question = questions[qno],
-            check_answer_url = url_for("check_answer")
+            check_answer_url = url_for("check_answer"),
+            correct = correct
             ))
     else:
         resp = make_response(render_template("index.html",
             mode = "fb_question",
             question_number = qno,
             question = questions[qno],
-            check_answer_url = url_for("check_answer")
+            check_answer_url = url_for("check_answer"),
+            correct = correct
             ))
 
     resp.set_cookie('qno', str(qno))
@@ -106,6 +110,7 @@ def check_answer():
             question_number = qno,
             explanation = questions[qno]["explanation"],
             next_question_url = url_for("next", qno=(qno+1)),
+            correct = correct,
             all_done = is_all_done
         )
     elif question_type == "fill_in_the_blanks":
@@ -123,6 +128,7 @@ def check_answer():
             question_number = qno,
             explanation = questions[qno]["explanation"],
             next_question_url = url_for("next", qno = (qno+1)),
+            correct = correct,
             all_done = is_all_done
             )
 
