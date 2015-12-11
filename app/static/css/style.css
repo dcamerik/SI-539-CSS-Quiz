@@ -631,4 +631,34 @@ footer
 {
   position: fixed;
   bottom: 0px;
+  background-color: #C7E7F0;
+  color: #5A82C7;
+  font-family: Courier;
+}
+
+#mainsection h3
+{
+  border: dashed 3px #FAC552;
+  padding: 10px;
+  background-color: #C7E7F0;
+  width: 250px;
+  margin: 0 auto;
+  color: #5A82C7;
+  font-family: Impact;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.navbar-brand
+{
+  font-family: Impact;
+  font-size: 200%;
+  letter-spacing: 1px;
+}
+
+.answer
+{
+  text-align: left;
+  margin-left: 41%;
+  margin-right: 41%;
 }
