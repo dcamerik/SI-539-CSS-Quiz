@@ -18,12 +18,14 @@
 
         <hr>
         {% for choice in question.choices %}
+        <div class="answer">
             <div class="radio">
               <label>
                 <input type="radio" name="choiceRadios" id="{{ choice.id }}" value="{{ choice.id }}">
                 {{ choice.text }}
               </label>
             </div>
+          </div>
         {% endfor %}
 
         <hr>
