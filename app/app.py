@@ -147,7 +147,7 @@ questions = [
 
     {
          "type" : "fill_in_the_blanks",
-         "question_text" : "How do you set the border width to the following values in one line? (Do not include the semicolon.) 5px at the top, 2px at the bottom, 10px at the right, 20px at the left<br />h1 { border: solid 1px black; border-width: _______; }",
+         "question_text" : "How do you set the border width to the following values in one line? (Do not include the semicolon.) 5px at the top, 2px at the bottom, 10px at the right, 20px at the left - h1 { border: solid 1px black; border-width: _______; }",
          "answer_id" : "5px 10px 2px 20px",
          "explanation" : "In order to set border widths on one line, the order goes top-right-bottom-left.",
     },
