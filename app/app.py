@@ -34,12 +34,12 @@ questions = [
             },
          ],
          "answer_id" : "1",
-         "explanation" : "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language",
+         "explanation" : "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.",
     },
 
     {
         "type" : "multiple_choice",
-        "question_text" : "Which CSS property controls the text size",
+        "question_text" : "Which CSS property controls the text size?",
         "choices" : [
             {
                 "id" : "1",
@@ -55,7 +55,7 @@ questions = [
             },
          ],
          "answer_id" : "2",
-         "explanation" : "The font-size property sets the size of the text",
+         "explanation" : "The font-size property sets the size of the text.",
     },
 {
     "type" : "multiple_choice",
@@ -71,15 +71,15 @@ questions = [
         },
         {
             "id" : "3",
-            "text" : "margin: 0 auto ; ",
+            "text" : "margin: 0 auto; ",
         },
      ],
      "answer_id" : "3",
-     "explanation" : "Margin 0 auto helps to horizontally center that element within its container",
+     "explanation" : "margin 0 auto helps to horizontally center that element within its container.",
 },
 {
     "type" : "multiple_choice",
-    "question_text" : "In the following code snippet, what value is given for the left margin margin: 5px 10px 3px 8px;",
+    "question_text" : "In the following code snippet, what value is given for the left margin in margin: 5px 10px 3px 8px; ?",
     "choices" : [
         {
             "id" : "1",
@@ -95,11 +95,11 @@ questions = [
         },
      ],
      "answer_id" : "1",
-     "explanation" : "The margin and padding are defined in this order: Top Right Bottom Left",
+     "explanation" : "The margin and padding are defined in this order: Top Right Bottom Left.",
 },
 {
     "type" : "multiple_choice",
-    "question_text" : "Which of the following property specifies which sides of an element other floating elements are not allowed.",
+    "question_text" : "Which of the following property specifies which sides of an element other floating elements are not allowed?",
     "choices" : [
         {
             "id" : "1",
@@ -115,13 +115,41 @@ questions = [
         },
      ],
      "answer_id" : "2",
-     "explanation" : "The clear property is used to control the behavior of floating elements.Elements after a floating element will flow around it. To avoid this, use the clear property.",
+     "explanation" : "The clear property is used to control the behavior of floating elements. Elements after a floating element will flow around it. To avoid this, use the clear property.",
 },
     {
          "type" : "fill_in_the_blanks",
-         "question_text" : "q 4 text",
-         "answer_id" : "answer",
-         "explanation" : "explanation 3",
+         "question_text" : "If one CSS selector is defined more than once, the most recent rule takes precedence. What command can be added to a rule so that it cannot be overwritten by a later rule? p { color: red _______; } p { color: green; }",
+         "answer_id" : "!important",
+         "explanation" : "The !important command can make sure that a rule is not overwritten by a later rule.",
+    },
+
+    {
+         "type" : "fill_in_the_blanks",
+         "question_text" : "What argument do you use to set a background image? body { background-image: _______(/img/background.png); }",
+         "answer_id" : "url",
+         "explanation" : "If you want to set a background image, you can set the location of the image with url(location of image).",
+    },
+
+    {
+         "type" : "fill_in_the_blanks",
+         "question_text" : "What rule do you use to set the font of a <p> tag to Impact? p { _______: Impact; }",
+         "answer_id" : "font-family",
+         "explanation" : "The font-family rule can be used to set the font of a piece of text.",
+    },
+
+    {
+         "type" : "fill_in_the_blanks",
+         "question_text" : "What argument do you use to make a dotted border around a <div> tag? div { border: _______ 1px black; }",
+         "answer_id" : "dotted",
+         "explanation" : "You can set arguments in the border rule to change the style of the border (solid, dashed, dotted, etc.).",
+    },
+
+    {
+         "type" : "fill_in_the_blanks",
+         "question_text" : "How do you set the border width to the following values in one line? (Do not include the semicolon.) 5px at the top, 2px at the bottom, 10px at the right, 20px at the left<br />h1 { border: solid 1px black; border-width: _______; }",
+         "answer_id" : "5px 10px 2px 20px",
+         "explanation" : "In order to set border widths on one line, the order goes top-right-bottom-left.",
     },
 ]
 
