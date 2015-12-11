@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   </head>
   <body>
     <header>
@@ -45,7 +46,7 @@
       Page content goes here
     {% endblock %}
 
-    
+
     <footer>
         <div class='container-fluid'>
             <div class='row'>
@@ -56,5 +57,25 @@
 
     <script src="/static/js/jquery-2.1.3.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+           $('#form1 :radio').click(function() {
+
+                var disabled = $('#form1').filter(function() {
+                    return $(':radio:checked', this).length == 0;
+                }).length > 0;
+
+                $('#form1 #submit_button').prop('disabled', disabled);
+           });
+            $('#answer').on('input', function() {
+                var nFilled = $('#answer').filter(function() {
+                    return $.trim( this.value ) !== '';
+                }).length;
+                $('#submit_button').prop('disabled', nFilled === 0);
+            })
+            .trigger('input');
+        });
+    </script>
   </body>
 </html>

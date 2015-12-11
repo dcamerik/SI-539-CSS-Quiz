@@ -14,7 +14,7 @@
         <hr>
         <p id="question">{{ question.question_text }}</p>
 
-        <form action="{{ check_answer_url }}" method=POST>
+        <form id="form1" action="{{ check_answer_url }}" method=POST>
 
         <hr>
         {% for choice in question.choices %}
@@ -27,7 +27,7 @@
         {% endfor %}
 
         <hr>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button id="submit_button" type="submit" class="btn btn-default" disabled="disabled">Submit</button>
 
         </form>
       </article>
@@ -41,7 +41,7 @@
         <hr>
         <p id="question">{{ question.question_text }}</p>
 
-        <form action="{{ check_answer_url }}" method=POST>
+        <form id="form2" action="{{ check_answer_url }}" method=POST>
 
         <hr>
         <div class="answerarea">
@@ -49,7 +49,7 @@
         </div>
 
         <hr>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button id="submit_button"  type="submit" class="btn btn-default" disabled="disabled">Submit</button>
 
         </form>
       </article>
