@@ -619,3 +619,9 @@ footer .container-fluid .row a {
     max-width: 20%;
     float: left;
 }
+
+#mainsection
+{
+  padding-left: 10%;
+  padding-right: 10%;
+}
