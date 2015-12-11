@@ -640,10 +640,10 @@ footer
 {
   border: dashed 3px #FAC552;
   padding: 10px;
-  background-color: #C7E7F0;
+  background-color: #F7E9BE;
   width: 250px;
   margin: 0 auto;
-  color: #5A82C7;
+  color: #E3BA40;
   font-family: Impact;
   margin-bottom: 10px;
   letter-spacing: 1px;
@@ -661,4 +661,14 @@ footer
   text-align: left;
   margin-left: 41%;
   margin-right: 41%;
+}
+
+#topnav
+{
+  background-color: #C7E7F0;
+}
+
+#topnav a
+{
+  color: #5A82C7;
 }
