@@ -1,80 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section id="mainsection" class="main">
-      <h2> CSS Quiz </h2>
-      
-      {% set qnum = question_number + 1 %}
-
-      {% if mode == "mc_question" %}
-      <hr>
-      <article id="multiple_choice_question_area">
-        <h3>Question: {{ qnum }}</h3>
-
-        <hr>
-        <p id="question">{{ question.question_text }}</p>
-
-        <form action="{{ check_answer_url }}" method=POST>
-
-        <hr>
-        {% for choice in question.choices %}
-            <div class="radio">
-              <label>
-                <input type="radio" name="choiceRadios" id="{{ choice.id }}" value="{{ choice.id }}">
-                {{ choice.text }}
-              </label>
-            </div>
-        {% endfor %}
-
-        <hr>
-        <button type="submit" class="btn btn-default">Submit</button>
-
-        </form>
-      </article>
+    <section id="maincontent" class="main">
+      <h2>Send feedback</h2>
+      {% if mode == "sent" %}
+          <p>Message sent!</p>
       {% endif %}
+      <form action="{{ url_for('feedback') }}" method=post>
+        {{ form.hidden_tag() }}
 
-      {% if mode == "fb_question" %}
-      <hr>
-      <article id="fill_blank_question_area">
-        <h3>Question: {{ qnum }}</h3>
+        {{ form.name.label }}
+        {{ form.name }}
+        <br />
 
-        <hr>
-        <p id="question">{{ question.question_text }}</p>
+        {{ form.email.label }}
+        {{ form.email }}
+        <br />
 
-        <form action="{{ check_answer_url }}" method=POST>
+        {{ form.subject.label }}
+        {{ form.subject }}
+        <br />
 
-        <hr>
-        <div class="answerarea">
-            <input type="text" name="answerText" id="answer">
-        </div>
+        {{ form.message.label }}
+        {{ form.message }}
+        <br />
 
-        <hr>
-        <button type="submit" class="btn btn-default">Submit</button>
-
-        </form>
-      </article>
-      {% endif %}
-
-      {% if mode == "answer" %}
-      <hr>
-      <article id="feedback">
-        <h3>Question: {{ qnum }}</h3>
-        {% if status == "correct" %}
-          <button type="button" class="btn btn-success">Correct</button>
-        {% else %}
-          <button type="button" class="btn btn-danger">Incorrect</button>
-        {% endif %}
-        <hr>
-        <p>{{ explanation }}</p>
-        <hr>
-        {% if all_done == "yes" %}
-            <h4>Quiz complete!</h4>
-        {% else %}
-            <form action="{{ next_question_url }}" method=GET>
-                <button type="submit" class="btn btn-default">Next</button>
-            </form>
-        {% endif %}
-      </article>
-      {% endif %}
+        {{ form.submit }}
+      </form>
     </section>
 {% endblock %}
